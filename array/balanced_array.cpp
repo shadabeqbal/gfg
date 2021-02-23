@@ -5,9 +5,9 @@
     //\\    
    //  \\
 Author: Shadab Eqbal 
-Created on: "01-02-2021" 
-Name: Find minimum and maximum element in an array
-Link: https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
+Created on: "03-02-2021" 
+Name: Balanced Array
+Link: https://practice.geeksforgeeks.org/problems/balanced-array07200720/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
 */
 
 #include <bits/stdc++.h>
@@ -43,28 +43,23 @@ typedef pair<ll, ll> pll;
 typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
+int minValueToBalance(vi &vec)
+{
+    int mid = vec.size() / 2;
+    int s1 = 0, s2 = 0;
+    for (int i = 0; i < mid; i++)
+        s1 += vec[i];
 
-vi foo(vi &vec){
-    vi ans;
-    int ma=INT_MIN,mi=INT_MAX;
-    for(int i=0;i<vec.size();i++){
-        ma=max(ma,vec[i]);
-        mi=min(mi,vec[i]);
-    }
+    for (int i = mid; i < vec.size(); i++)
+        s2 += vec[i];
 
-    ans.pb(mi);
-    ans.pb(ma);
-
-    return ans;
+    return abs(s1 - s2);
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    vi vec={3, 2, 1, 56, 10000, 167};
-    vi ans=foo(vec);
-    for(auto i:ans)
-        cout<<i<<" ";
-    
+    vi vec = {1, 2, 1, 2, 1, 3};
+    cout << minValueToBalance(vec);
     return 0;
 }

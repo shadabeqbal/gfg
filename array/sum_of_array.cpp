@@ -5,9 +5,9 @@
     //\\    
    //  \\
 Author: Shadab Eqbal 
-Created on: "01-02-2021" 
-Name: C++ Arrays (Sum of array) | Set 1
-Link: https://practice.geeksforgeeks.org/problems/c-arrays-sum-of-array-set-14805/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
+Created on: "03-02-2021" 
+Name: Sum of Array
+Link: https://practice.geeksforgeeks.org/problems/sum-of-array2326/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
 */
 
 #include <bits/stdc++.h>
@@ -44,26 +44,18 @@ typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
-int foo(vi &vec){
-    int sum=0;
-    for(int i=0;i<vec.size();i++)
-        sum+=vec[i];
-    
-    return sum;
+int foo(vi &arr) {
+    int s=0;
+    for(int i=0;i<arr.size();i++)
+        s+=arr[i];
+
+    return s;
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int n;
-    vi vec;
-    cin>>n;
-    for(int i=0;i<n;i++)
-    {
-        int x;
-        cin>>x;
-        vec.pb(x);
-    }
+    vi vec={1,2,3};
     int ans=foo(vec);
     cout<<ans;
     return 0;

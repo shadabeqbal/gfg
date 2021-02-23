@@ -44,11 +44,26 @@ typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
+void matchPairs(char *nuts, char *bolts, int n) {
+	    sort(nuts,nuts+n);
+	    sort(bolts,bolts+n);
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    vector<char> vec={'@','%','$','#','^'};
-    sort(vec.begin(),vec.end());
+    char nuts[]={'@','%','$','#','^'};
+    char bolts[]={'@','%','$','#','^'};
+
+    matchPairs(nuts,bolts,5);
+
+    for(auto i:nuts)
+        cout<<i<<" ";
+    
+    cout<<"\n";
+
+    for(auto i:bolts)
+        cout<<i<<" ";
+    
     return 0;
 }

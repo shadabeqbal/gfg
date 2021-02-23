@@ -5,9 +5,9 @@
     //\\    
    //  \\
 Author: Shadab Eqbal 
-Created on: "03-02-2021" 
-Name: Sum of Array
-Link: https://practice.geeksforgeeks.org/problems/sum-of-array2326/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
+Created on: "14-02-2021" 
+Name: Maximum XOR subarray
+Link: https://practice.geeksforgeeks.org/problems/a512e4b2e812b6df2159b19cc7090ffc1ab056dd/1/?page=1&query=page1
 */
 
 #include <bits/stdc++.h>
@@ -44,19 +44,28 @@ typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
-int foo(vi &arr) {
-    int s=0;
-    for(int i=0;i<arr.size();i++)
-        s+=arr[i];
+int maxSubarrayXOR(int N, int arr[])
+{
+    int curr=0;
+    for(int i=0;i<N;i++)
+        curr^=arr[i];
+    
+    int mc=curr;
+    for (int i = 0; i < N; i++)
+    {
+        curr^=arr[i];
+        mc=max(mc,curr);
+    }
 
-    return s;
+    return mc;
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    vi vec={1,2,3};
-    int ans=foo(vec);
-    cout<<ans;
+    int n=2;
+    int arr[n]={4,6};
+    int x=maxSubarrayXOR(n,arr);
+    cout<<x;
     return 0;
 }

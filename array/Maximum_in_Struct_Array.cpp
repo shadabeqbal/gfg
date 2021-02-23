@@ -5,9 +5,9 @@
     //\\    
    //  \\
 Author: Shadab Eqbal 
-Created on: "01-02-2021" 
-Name: Find minimum and maximum element in an array
-Link: https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
+Created on: "03-02-2021" 
+Name: 
+Link: 
 */
 
 #include <bits/stdc++.h>
@@ -43,28 +43,34 @@ typedef pair<ll, ll> pll;
 typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
+struct Height {
+	int feet;
+	int inches;
+};
 
-vi foo(vi &vec){
-    vi ans;
-    int ma=INT_MIN,mi=INT_MAX;
-    for(int i=0;i<vec.size();i++){
-        ma=max(ma,vec[i]);
-        mi=min(mi,vec[i]);
+int findMax(Height arr[], int n)
+{
+    int val=INT_MIN;
+    for(int i=0;i<n;i++){
+        if((12*(arr[i].feet)+(arr[i].inches))>val)
+        {
+            val=(12*(arr[i].feet)+(arr[i].inches));
+        }
+        
     }
-
-    ans.pb(mi);
-    ans.pb(ma);
-
-    return ans;
+    
+    return val;
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    vi vec={3, 2, 1, 56, 10000, 167};
-    vi ans=foo(vec);
-    for(auto i:ans)
-        cout<<i<<" ";
-    
+    struct Height p[2];
+    p[0].feet=1;
+    p[0].inches=2;
+    p[1].feet=2;
+    p[1].inches=1;
+    cout<<findMax(p,2);
+
     return 0;
 }

@@ -5,9 +5,9 @@
     //\\    
    //  \\
 Author: Shadab Eqbal 
-Created on: "01-02-2021" 
-Name: Find minimum and maximum element in an array
-Link: https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
+Created on: "03-02-2021" 
+Name: Count of smaller elements 
+Link: https://practice.geeksforgeeks.org/problems/count-of-smaller-elements5947/1/?category[]=Arrays&category[]=Arrays&page=1&query=category[]Arrayspage1category[]Arrays
 */
 
 #include <bits/stdc++.h>
@@ -44,27 +44,23 @@ typedef vector<pll> vpl;
 typedef vector<ll> vll;
 typedef vector<vll> vvll;
 
-vi foo(vi &vec){
-    vi ans;
-    int ma=INT_MIN,mi=INT_MAX;
-    for(int i=0;i<vec.size();i++){
-        ma=max(ma,vec[i]);
-        mi=min(mi,vec[i]);
+int countOfElements(int arr[], int n, int x)
+{
+    int cnt = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] <= x)
+            cnt++;
     }
 
-    ans.pb(mi);
-    ans.pb(ma);
-
-    return ans;
+    return cnt;
 }
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    vi vec={3, 2, 1, 56, 10000, 167};
-    vi ans=foo(vec);
-    for(auto i:ans)
-        cout<<i<<" ";
-    
+    int arr[] = {1, 2, 4, 5, 8, 10};
+    cout << countOfElements(arr, 6, 9);
     return 0;
 }
