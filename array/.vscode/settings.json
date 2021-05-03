@@ -1,6 +1,11 @@
 {
     "files.associations": {
+        "*.module": "php",
         "iostream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "sstream": "cpp",
+        "regex": "cpp",
+        "complex": "cpp",
+        "iosfwd": "cpp"
     }
 }
